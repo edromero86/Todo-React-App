@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Trebuchet MS', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'Arial, sans-serif';
 }
 
 body {
@@ -47,6 +47,10 @@ h1 {
     color: #fff;
 }
 
+.todo-input::placeholder {
+    color: #e2e2e2;
+}
+
 .todo-button {
     padding: 16px;
     border: none;
@@ -57,6 +61,16 @@ h1 {
     text-transform: capitalize;
     background: #2a7da7;
 }
+
+.todo-input.edit {
+    border: 2px solid #fff;
+}
+
+.todo-button.edit {
+    background: #1e796a;
+    padding: 16px 22px;
+}
+
 
 .todo-container {
     display: flex;

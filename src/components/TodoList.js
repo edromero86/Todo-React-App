@@ -6,7 +6,7 @@ function TodoList() {
   const [todos, setTodos] = useState([]);
 
   const addTodo = (todo) => {
-    if (!todo.text || /^\s*$/.test(todo.text)) {
+    if (!todo.text) {
       // if letter is not typed it will not render
       return;
     }
@@ -18,7 +18,7 @@ function TodoList() {
   };
 
   const updateTodo = (todoId, newValue) => {
-    if (!newValue.text || /^\s*$/.test(newValue.text)) {
+    if (!newValue.text) {
       // if letter is not typed it will not render
       return;
     }
@@ -48,12 +48,15 @@ function TodoList() {
     <div>
       <h1>To-Do List for Today?</h1>
       <TodoForm onSubmit={addTodo} />
-      <Todo
-        todos={todos}
-        completeTodo={completeTodo}
-        removeTodo={removeTodo}
-        updateTodo={updateTodo}
-      />
+      {todos.map((todo) => (
+        <Todo
+          todo={todo}
+          completeTodo={completeTodo}
+          removeTodo={removeTodo}
+          updateTodo={updateTodo}
+          key={todo.id}
+        />
+      ))}
     </div>
   );
 }
